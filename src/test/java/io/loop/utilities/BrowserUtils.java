@@ -76,6 +76,16 @@ public class BrowserUtils {
         }
         driver.switchTo().window(origin);
     }
+    /**
+     * Clicks on an element using JavaScript
+     *
+     * @param element
+     * @author akb
+     */
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
 
     /**
      * click any link from loop practice

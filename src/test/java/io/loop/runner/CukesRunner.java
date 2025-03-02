@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         "rerun:target/rerun.txt"},
         features ="src/test/resources/features",
         glue = "io/loop/step_definitions",
-        dryRun = false,
-        tags ="@google_search_outline",
+        dryRun = true,
+        tags = " ",
         monochrome = true
 
 )

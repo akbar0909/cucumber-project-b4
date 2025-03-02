@@ -3,16 +3,24 @@ package io.loop.step_definitions;
 import io.cucumber.java.*;
 import io.loop.utilities.BrowserUtils;
 import io.loop.utilities.Driver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Hook {
+
+    private static final Logger LOG = LogManager.getLogger();
+
     @Before
 
     public void setUp(Scenario scenario) {
         Driver.getDriver();
         BrowserUtils.myScenario = scenario;
+        LOG.info("...........START AUTOMATION.......LOOP ACADEMY......");
     }
+
+
     @After
     public void tearDown(Scenario scenario) {
         // only take screenshot when scenario is failed
@@ -21,7 +29,9 @@ public class Hook {
             scenario.attach(screenshot, "image/png", scenario.getName());
 
         }
-        Driver.closeDriver();
+
+        //  Driver.closeDriver();
+        LOG.info("...........END AUTOMATION.......LOOP ACADEMY.....");
     }
     @AfterStep
     public void takeScreenshot(Scenario scenario) {
@@ -30,4 +40,5 @@ public class Hook {
         scenario.attach(screenshot, "image/png", scenario.getName());
 
     }
+
 }

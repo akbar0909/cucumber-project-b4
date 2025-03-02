@@ -70,6 +70,7 @@ public class Goggle_searchStepDefs {
     }
     @Then("user searches the following items")
     public void user_searches_the_following_items(List<String> items) {
+//        public void user_searches_the_following_items(List<Map<String, String>> items) {
 //        for (String item : items) {
 //            googleSearchPage.searchBox.clear();
 //            googleSearchPage.searchBox.sendKeys(item + Keys.ENTER);
@@ -90,6 +91,9 @@ public class Goggle_searchStepDefs {
             assertEquals("Expected result does not match actual", p + " - Google Search", Driver.getDriver().getTitle());
 
         });
+//        for (String item : items) {
+//            System.out.println("Item" + item);
+//        }
     }
 
     @When("user search for {string}")
@@ -104,5 +108,8 @@ public class Goggle_searchStepDefs {
         assertEquals("Expected capital city: "+capital +" does not match actual one: "+googleSearchPage.capital.getText(),capital,googleSearchPage.capital.getText());
 
     }
+    @Then("user should see Loop Academy - Google search in the google title")
+    public void user_should_see_loop_academy_google_search_in_the_google_title() {
 
+    }
 }

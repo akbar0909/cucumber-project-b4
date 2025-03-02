@@ -17,7 +17,10 @@ public class Hook {
     public void setUp(Scenario scenario) {
         Driver.getDriver();
         BrowserUtils.myScenario = scenario;
+        LOG.info("...........START AUTOMATION.......LOOP ACADEMY......");
     }
+
+
     @After
     public void tearDown(Scenario scenario) {
         // only take screenshot when scenario is failed

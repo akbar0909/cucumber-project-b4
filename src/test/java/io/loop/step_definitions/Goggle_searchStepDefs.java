@@ -108,5 +108,8 @@ public class Goggle_searchStepDefs {
         assertEquals("Expected capital city: "+capital +" does not match actual one: "+googleSearchPage.capital.getText(),capital,googleSearchPage.capital.getText());
 
     }
+    @Then("user should see Loop Academy - Google search in the google title")
+    public void user_should_see_loop_academy_google_search_in_the_google_title() {
 
+    }
 }

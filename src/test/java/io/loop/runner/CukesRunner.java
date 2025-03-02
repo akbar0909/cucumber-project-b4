@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
                  "json:target/json-reports/json-report.json"},
         features ="src/test/resources/features",
         glue = "io/loop/step_definitions",
-        dryRun = false,
-        tags ="@first",
+        dryRun = true,
+        tags = " ",
         monochrome = true
 
 )

@@ -44,9 +44,9 @@ public class WikiSearchStepDefs {
        // Assert.assertTrue(wikiSearchPage.headerSteveJobsImage.getText().contains("Steve Jobs"));
 
     }
-    @Then("we love Loop Academy")
-    public void we_love_loop_academy() {
-        System.out.println("We Love Loop Academy");
-    }
+//    @Then("we love Loop Academy")
+//    public void we_love_loop_academy() {
+//        System.out.println("We Love Loop Academy");
+//    }
 
 }

@@ -9,24 +9,24 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GoogleSearchPage {
 
-    public GoogleSearchPage() {
+    public GoogleSearchPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
-    @FindBy(name="q")
+    @FindBy(name = "q" )
     public WebElement searchBox;
 
-    @FindBy(name = "btnK" )
-    public WebElement searcButton;
+    @FindBy(xpath = "//input[@id='gbqfbb']//preceding-sibling::input")
+    WebElement searchButton;
 
     @FindBy(xpath = "//div[@class='recaptcha-checkbox-border']" )
     public WebElement captcha;
 
-    @FindBy(xpath = "//div[@class='wvKXQ']")
+    @FindBy (xpath = "//div[@class='wvKXQ']")
     public WebElement capital;
-    public void handleReCaptcha(WebDriver driver, WebElement captchaElement) {
 
+    public void handleCaptcha(WebDriver driver, WebElement captchaElement) {
         try {
             WebElement iframe = driver.findElement(By.xpath("//iframe[@title='reCAPTCHA']"));
             driver.switchTo().frame(iframe);
@@ -35,9 +35,11 @@ public class GoogleSearchPage {
                 captchaElement.click();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("capture handled");
         }
         driver.switchTo().defaultContent();
-
     }
+
+
+
 }

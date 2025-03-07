@@ -1,6 +1,8 @@
+
+@google_search_data_table
 Feature: Passing multiple parameters to the same step
 
-  @google_search_data_table
+
   Scenario: Searching multiple items
     Given user in on Google search page
     Then user searches the following items

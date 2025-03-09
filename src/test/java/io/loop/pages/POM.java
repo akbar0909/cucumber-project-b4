@@ -8,6 +8,7 @@ public class POM {
     private ProductPage productPage;
     private DocuportHomePageForClient docuportHomePageForClient;
 
+
     public LoginPage getLoginPage() {
         if (loginPage == null) {
             loginPage = new LoginPage();
@@ -45,6 +46,7 @@ public class POM {
         }
         return productPage;
     }
+
 
     public DocuportHomePageForClient getDocuportHomePageForClient() {
         if (docuportHomePageForClient == null) {

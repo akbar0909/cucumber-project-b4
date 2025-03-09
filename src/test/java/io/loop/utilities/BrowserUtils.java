@@ -31,6 +31,8 @@ public class BrowserUtils {
         }
     }
 
+
+
     /**
      * validate if driver switched to expected url or title
      * @param driver
@@ -75,6 +77,14 @@ public class BrowserUtils {
             }
         }
         driver.switchTo().window(origin);
+    }
+
+    public static void justWait (int seconds){
+        try{
+            Thread.sleep(seconds);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
     /**
      * Clicks on an element using JavaScript
@@ -124,6 +134,7 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
+
     /**
      * waits for the provided element to be visible
      * @param element
@@ -135,6 +146,8 @@ public class BrowserUtils {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitSec));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+
 }
 
 

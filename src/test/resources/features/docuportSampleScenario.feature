@@ -16,4 +16,11 @@ Feature: Docuport Sample Scenario
     And user selects "Batch1 Group1" to "Upload by" field on "Received Doc" page
     And user clicks "Search2" button on "Received Doc" page
     And user validate message "Your search returned no results. Make sure you search properly" on "Received Doc" page
+    And user clicks "My uploads" button on "Left Navigate" page
+    And user clicks "Upload Documents" button on "My uploads" page
+    # if input type works you do not need below step
+    And user clicks "Upload file" button on "My uploads" page
+    And user uploads document
+
+
 

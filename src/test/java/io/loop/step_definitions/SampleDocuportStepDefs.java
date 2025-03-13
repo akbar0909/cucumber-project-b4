@@ -2,12 +2,12 @@ package io.loop.step_definitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.loop.pages.HomePage;
-import io.loop.pages.LeftNavigatePage;
-import io.loop.pages.LoginPage;
-import io.loop.pages.ReceivedDocsPage;
+import io.loop.pages.*;
+import io.loop.utilities.BrowserUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.awt.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,6 +17,7 @@ public class SampleDocuportStepDefs {
     LoginPage loginPage = new LoginPage();
     ReceivedDocsPage receivedDocsPage = new ReceivedDocsPage();
     LeftNavigatePage leftNavigatePage = new LeftNavigatePage();
+    MyUploadsPage myUploadsPage = new MyUploadsPage();
     private static final Logger LOG = LogManager.getLogger();
 
     @When("user inserts {string} to {string} field on {string} page")
@@ -38,16 +39,15 @@ public class SampleDocuportStepDefs {
     public void user_clicks_button_on_page(String button, String page) {
         switch (page.toLowerCase().trim()){
             case "login", "choose account":
-      try{          loginPage.clickButton(button);
-      } catch (Exception e) {
-          loginPage.clickButton(button);
+                loginPage.clickButton(button);
 
-      }
+//      try{          loginPage.clickButton(button);
+//      } catch (Exception e) {
+//          loginPage.clickButton(button);
+//
+//      }
 
-
-
-
-                LOG.info(button + " - was successfully clicked");
+           LOG.info(button + " - was successfully clicked");
                 break;
             case "left navigate":
                 leftNavigatePage.clickButton(button);
@@ -57,8 +57,23 @@ public class SampleDocuportStepDefs {
                 receivedDocsPage.clickButton(button);
                 LOG.info(button + " - was successfully clicked");
                 break;
+
+            case "my uploads":
+                myUploadsPage.clickButton(button);
+                LOG.info(button + " - was successfully clicked");
+                break;
             default: throw new IllegalArgumentException("not such a page: " + page);
         }
+    }
+
+    @Then("user uploads document")
+    public void user_uploads_document() throws AWTException {
+
+//        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@type='file']"));
+//        element.sendKeys("/Users/nsh/Desktop/text.txt");
+
+        BrowserUtils.uploadFileForWindows("C:/Users/akbar/upload.docx");
+
 
     }
     @Then("user selects {string} to {string} field on {string} page")

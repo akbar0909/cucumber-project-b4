@@ -56,9 +56,23 @@ public class LoginPage {
                 break;
 
             case "continue":
+//
+//
+//                BrowserUtils.waitForVisibility(continueButton, 10).click();
+//
+//                break;
+
+            try {
+
                 BrowserUtils.waitForVisibility(continueButton, 10).click();
 
+            }catch (Exception e){
+                continueButton.click();
+//                WebElement element = Driver.getDriver().findElement(By.xpath("//span[.=' Continue ']"));
+//                element.click();
+            }
                 break;
+
             default: throw new IllegalArgumentException("Not such a button: " + button);
         }
     }
